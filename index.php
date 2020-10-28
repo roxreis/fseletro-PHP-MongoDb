@@ -7,19 +7,9 @@
     <title>Home</title>
 </head>
 <body>
-    <!-- inicio do menu -->
-    <header class="container">
-        <a href="index.html"><img src="img/logo.png" alt="logo da loja"></a>
-        <div style="background-color: #e7333f; width: 82%; margin-left: 40px;">
-            <div class="div-menu">
-                <ul>
-                    <li><a href="produtos.html">PRODUTOS</a></li>
-                    <li><a href="lojas.html">LOJAS</a></li>
-                    <li><a href="contato.html">CONTATO</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    
+    <?php include_once('template/header.php'); ?>
+
     <main class="container index">
         <section class="section-home">
             <div>

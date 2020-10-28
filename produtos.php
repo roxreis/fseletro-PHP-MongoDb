@@ -1,3 +1,16 @@
+<?php 
+
+include_once('bancoDados/conexao.php');
+
+
+$select = 'SELECT * FROM produtos';
+$result = $con->query($select);
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,41 +20,41 @@
     <title>Produtos</title>
 </head>
 <body>
-    <!-- inicio do menu -->
-    <header class="container">
-        <a href="index.html"><img src="img/logo.png" alt="logo da loja"></a>
-        <div style="background-color: #e7333f; width: 82%; margin-left: 40px;">
-            <div class="div-menu">
-                <ul>
-                    <li><a href="produtos.html">PRODUTOS</a></li>
-                    <li><a href="lojas.html">LOJAS</a></li>
-                    <li><a href="contato.html">CONTATO</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <main class="container">
+    
+    <?php include_once('template/header.php'); ?>
+
+    <main class="containerRoot">
         <h1>Produtos</h1>
             <section class="section-produtos">  
             <aside>
-                <h3>Categorias</h3>
+                <h3>CATEGORIAS</h3>
                 <ul>
                     <li onclick="exibirTodos()">Todos (12)</li>
-                    <li onclick="exibirCategoria('relogio')">Relogios (3)</li>
-                    <li onclick="exibirCategoria('tv')">Tvs (3)</li>
-                    <li onclick="exibirCategoria('celular')">Smartphones (3)</li>
-                    <li onclick="exibirCategoria('note')">Notebooks (3)</li>
+                    <li onclick="exibirCategoria('Relogios')">Relogios (3)</li>
+                    <li onclick="exibirCategoria('Tvs')">Tvs (3)</li>
+                    <li onclick="exibirCategoria('Smartphones')">Smartphones (3)</li>
+                    <li onclick="exibirCategoria('Notebooks')">Notebooks (3)</li>
                 </ul>
             </aside>
             <section class=produtos-img>
+                <?php if($result->num_rows > 0): ?> 
+                    <?php while($produto = $result->fetch_assoc()): ?>
+                        <div class="boxProdutos" id="<?= $produto['categoria'];?>"> 
+                            <img src="<?=$produto['imagem'] ; ?>" alt="relogio"  >
+                            <p><strong><?=$produto['descricao'] ;?></strong></p>
+                            <hr>
+                            <p>Preço inicial: <strike>R$ <?=$produto['preco'];?></strike></p>
+                            <p>Preço com desconto: <strong>R$ <?=$produto['precoFinal'];?></strong></p>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <h2>Não há produtos cadastrados</h2>
+                <?php endif; ?>
 
-                <div class="boxProdutos" id="relogio">
-                    <img src="./img/relogio1.JPG" alt="relogio" onclick="destaque(this)"  class="imgProdutos" onmouseover="mouseOver()" onmouseout="mouseOut()" >
-                    <p>Relogio Samsung Rosa</p>
-                    <hr>
-                    <p><strike>R$ 2000,00</strike></p>
-                    <p><strong>R$ 1000,00</strong></p>
-                </div>
+<!-- 
+onclick="destaque(this)"  class="imgProdutos" onmouseover="mouseOver()" onmouseout="mouseOut()"
+
+
                 <div class="boxProdutos" id="relogio">
                     <img src="./img/relogio2.JPG" alt="relogio" onclick="destaque(this)">
                     <p>Relogio Smart Band Preto</p>
@@ -118,7 +131,7 @@
                     <hr>
                     <p><strike>R$ 5000,00</strike></p>
                     <p><strong>R$ 4000,00</strong></p>
-                </div>
+                </div> -->
             </section>
         </section>
         <footer>

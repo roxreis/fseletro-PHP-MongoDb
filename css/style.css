@@ -22,10 +22,19 @@ body {
 }
 
 main {
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    background-color: #fafafa;
+    padding: 30px 0px 0 75px;
+    border-radius: 10px;
 }
 
-.container {
+
+.containerRoot {
     margin: 0px 80px 0px  80px;
    
 }
@@ -63,15 +72,17 @@ header {
     align-items: center;
     background-color: white;
     padding: 0px 10px;
+    height: 152px;
 }
 header img {
     width: 185px;
-    margin-left: 12px;
+    margin-left: 41px;
 }
 header div ul {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-bottom: 0;
 }
 .div-menu ul li {
     list-style-type: none;
@@ -126,14 +137,8 @@ section .formas-pgto {
     margin-bottom: 10px;
 
 }
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-}
+
+
 main .section-home {
     display: flex;
     justify-content: center;
@@ -150,6 +155,7 @@ main .section-home {
     justify-content: center;
     flex-direction: column;
     align-items: center; */
+    margin: 81px 0 -4px 0;
 }
 
 /* SECTION PRODUTOS */
@@ -163,19 +169,26 @@ aside {
     height: 800px;
     padding: 5px;
     color: #5d5d5d;
+    line-height: 29px;
 }
 
 aside ul li {
     list-style-type: none;
     padding: 2px;
     cursor: pointer;
+    transition: 0.8s;
+}
+
+aside ul li:hover{
+    color: #000000;
+ 
 }
 
 .produtos-img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 1504px;
+    width: 1476px;
     background-color: #fdfdfd;
 }
 
@@ -186,12 +199,22 @@ aside ul li {
  
 }
 
+.boxProdutos {
+    line-height: 19px;
+    color: #5d5d5d;;
+}
+
 .boxProdutos img {
     max-height: 200px;
 }
 
 .boxProdutos p {
     margin-top: 10px;
+}
+
+.boxProdutos p:nth-child(2) {
+    text-transform: uppercase;
+    margin-top: 25px;
 }
 
 /* SECTION LOJAS */
@@ -204,32 +227,37 @@ aside ul li {
 
 .section-lojas div {
     padding: 10px 50px;
+    line-height: 11px;
+  
 }
+
+.section-lojas div img {
+    width: 230px;
+}
+
 
 
 /* SECTION CONTATO */
 
-.section-contato div {
+.section-contato div img {
+    width: 150px;
+}
+
+.section-contato .zap-contato {
     display: flex;
+    font-size: 30px;
+    margin-bottom: 50px;
     align-items: center;
-    padding: 30px 0px;
-    justify-content: space-between;
+
 }
 
-form {
-    height: 177px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(194, 194, 194);
-    padding: 15px;
-}
 
-form textarea, input{
- width: 400px;
-}
-
-form h4 {
-    padding: 8px 0px;
+.section-contato form {
+    padding: 30px;
+    border-radius: 7px;
+    width: 549px;
+    /* margin-left: 359px; */
+    border: 1px solid #d4d4d4;
 }
 
 button {
@@ -240,6 +268,27 @@ button {
     background-color: green;
     height: 30px;
 }
+
+/* PEDIDOS */
+
+.table-pedidos {
+    width: 1024px;
+    border: 1px solid #d4d4d4;
+}
+
+.form-pedidos {
+    padding: 30px;
+    border-radius: 7px;
+    width: 549px;
+    /* margin-left: 359px; */
+    border: 1px solid #d4d4d4;
+}
+
+.form-pedidos h2 {
+    margin-bottom: 20px;
+}
+
+
 
 /* FOOTER */
 
@@ -252,7 +301,7 @@ button {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 116px;
 }
 .formas-pgto img{
     width: 386px;
