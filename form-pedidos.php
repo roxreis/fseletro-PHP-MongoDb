@@ -1,43 +1,3 @@
-<?php 
-
-include_once('bancoDados/conexao.php');
-
-
-if (isset($_POST['enviarPedidos']) && $_POST['enviarPedidos'] != null) {
-
-    $nome = $_POST['nomeCliente'];
-    $endereco = $_POST['endCliente'];
-    $ddd = $_POST['dddCliente'];
-    $tel = $_POST['telCliente'];
-    $produto = $_POST['produtoCliente'];
-    $valorUnitario = $_POST['unitarioCliente'];
-    $quantidade = $_POST['quantCliente'];
-    $valorTotal = $valorUnitario * $quantidade;
-
-
-    $inserir = "INSERT INTO pedidos (nome_cliente, endereco, ddd, telefone, nome_produto, valor_unitario, quantidade, valor_total) VALUES ('$nome', '$endereco', '$ddd', '$tel', '$produto', '$valorUnitario','$quantidade','$valorTotal' )";
-
-
-    if (mysqli_query($con, $inserir)) {
-        echo "<script> alert('Pedido cadastrado com sucesso!')</script>";
-
-    } else {
-
-        printf("Errormessage: %s\n", mysqli_error($con) ); 
-    
-    }
-}
-
-
-$select = 'SELECT * FROM produtos';
-$result1 = $con->query($select);
-
-$select = 'SELECT * FROM pedidos';
-$result2 = $con->query($select);
-
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,27 +10,32 @@ $result2 = $con->query($select);
 </head>
 <body>
     
-    <?php include_once('template/header.php'); ?>
+    <?php 
+    
+    include_once('template/header.php'); 
+    include_once('listar-dados-banco.php');
+    
+    ?>
 
     <section class="containerRoot d-flex justify-content-around">
         <div class="form-group container-form-pedidos">
-            <form class="form-pedidos" action="#" method="POST">
+            <form class="form-pedidos" action="cadastro-pedido.php" method="POST">
             <h2>Cadastre os Pedidos</h2>
                 <div class="form-group">
                     <label>Nome do Cliente</label>
-                    <input class="form-control" name="nomeCliente"placeholder= "" type="text" >
+                    <input class="form-control" name="nomeCliente"type="text" >
                 </div>
                 <div class="form-group">
                     <label>Endereço</label>
-                    <input  class="form-control" name="endCliente" type="text" >
+                    <input  class="form-control" name="endCliente" type="text" placeholder= "Rua/av e numero" >
                 </div>
                 <div class="form-group">
                     <label>ddd</label>
-                    <input class="form-control" name="dddCliente" type="number" min="1" >
+                    <input class="form-control" name="dddCliente" type="number" min="0" placeholder="2 números">
                 </div>
                 <div class="form-group">
                     <label>telefone</label>
-                    <input class="form-control" name="telCliente" type="number" >
+                    <input class="form-control" name="telCliente" type="number" min="0" placeholder="9 números">
                 </div>   
                 <div class="form-group">
                     <label>Nome do Produto</label>
@@ -86,25 +51,25 @@ $result2 = $con->query($select);
 
                 <div class="form-group">
                     <label class=>Valor Unitário</label>
-                    <input class="form-control"name="unitarioCliente" type="number" >
+                    <input class="form-control" name="unitarioCliente" type="number" step="0.01" min="0" placeholder="ex 2000,00"  >
                 </div> 
                 <div class="form-group">
                     <label>Quantidade</label>
-                    <input class="form-control" name="quantCliente" type="number" >
+                    <input class="form-control" name="quantCliente" type="number" min="0">
                 </div> 
                 <div class="form-group">
                     <label>Valor Total</label>
-                    <input class="form-control" name="totalCliente" type="number" disabled placeholder="preenchido automaticamente" >
+                    <input class="form-control" name="totalCliente" type="number" step="0.01" disabled placeholder="calculado automático" >
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" name="enviarPedidos" >Enviar</button>
+                    <button class="btn btn-success" type="submit">Enviar</button>
                 </div>
             </form>
         </div>
        <table class="table table-striped table-pedidos dflex flex-column">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Numero Pedido</th>
                     <th scope="col">Nome Cliente</th>
                     <th scope="col">Endereço</th>
                     <th scope="col">DDD</th>
@@ -118,6 +83,13 @@ $result2 = $con->query($select);
             <tbody>
             <?php if($result2->num_rows > 0): ?> 
                 <?php while ($pedido = $result2->fetch_assoc()): ?>
+                    <?php 
+                        //ao imprimir na tela, troca o ponto dos valores por virgula
+                        $unitSemVirgula = $pedido['valor_unitario']; 
+                        $unitComVirgula = str_replace(".", ",",$unitSemVirgula);
+                        $totSemVirgula = $pedido['valor_total'];
+                        $totComVirgula = str_replace(".", ",",$totSemVirgula);
+                    ?>
                     <tr> 
                         <th scope="row"><?= $pedido['id']; ?></th>
                         <td><?= $pedido['nome_cliente']; ?></td>
@@ -125,13 +97,13 @@ $result2 = $con->query($select);
                         <td><?= $pedido['ddd']; ?></td>
                         <td><?= $pedido['telefone']; ?></td>
                         <td><?= $pedido['nome_produto']; ?></td>
-                        <td><?= $pedido['valor_unitario']; ?></td>
+                        <td>R$ <?= $unitComVirgula; ?> </td>
                         <td><?= $pedido['quantidade']; ?></td>
-                        <td><?= $pedido['valor_total']; ?></td>
+                        <td>R$ <?= $totComVirgula; ?></td>
                     </tr>
                 <?php endwhile; ?>
             <?php else: ?>
-                <h2>Não há pedidos cadastrados</h2>
+                <script> alert('Não há pedidos cadastrados!')</script>
             <?php endif; ?>   
             </tbody>
         </table>

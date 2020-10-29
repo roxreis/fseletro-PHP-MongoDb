@@ -118,7 +118,7 @@ header div ul {
 
 /* SECTION HOME */
 .index{
-    height: 500px;
+    height: 434px;
 }
 
 section .formas-pgto {
@@ -129,13 +129,41 @@ section .formas-pgto {
 
 
 .section-home {
-    width: 100%;
-    margin-top: -43px;
+
 }
 .section-home div h1 {
     margin-top: 52px;
     margin-bottom: 10px;
 
+}
+
+.banner-home {
+    /*! margin: 509px 81px 0px 10px; */
+    height: inherit;
+    /*! display: flex; */
+}
+
+.banner-home div {
+    position: relative;
+    bottom: 353px;
+    text-align: center;
+    color: withe;
+    color: white;
+    font-size: 45px;
+    text-shadow: 5px 4px 9px #1b1b1b;
+}
+
+.banner-home div h1{
+    color: #fff;
+    text-shadow: 5px 4px 9px #1b1b1b;
+    font-size: 85px;
+}
+
+.banner-home img{
+    width: 1621px;
+    height: 400px;
+    /*! margin-top: 404px; */
+    /*! margin-right: 67px; */
 }
 
 
@@ -144,19 +172,11 @@ main .section-home {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 133px;
+    height: inherit;
+    /*! width: 100%; */
+    margin-top: 336px;
 }
 
-.section-home div {
-    width: 600px;
-    height: 180px;
-    box-shadow: 1px 2px 20px #5d5d5d;
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center; */
-    margin: 81px 0 -4px 0;
-}
 
 /* SECTION PRODUTOS */
 
@@ -176,11 +196,12 @@ aside ul li {
     list-style-type: none;
     padding: 2px;
     cursor: pointer;
-    transition: 0.8s;
+    transition: 0.2s;
 }
 
 aside ul li:hover{
     color: #000000;
+    font-size: 16.8px;
  
 }
 
@@ -188,15 +209,14 @@ aside ul li:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 1476px;
+    width: 1473px;
     background-color: #fdfdfd;
 }
 
 .produtos-img div {
-    padding: 0px 73px 139px 117px;
+    padding: 0px 73px 139px 134px;
     width: 491px;
     margin-bottom: 7px;
- 
 }
 
 .boxProdutos {
@@ -272,7 +292,7 @@ button {
 /* PEDIDOS */
 
 .table-pedidos {
-    width: 1024px;
+    width: 1094px;
     border: 1px solid #d4d4d4;
 }
 
@@ -286,6 +306,10 @@ button {
 
 .form-pedidos h2 {
     margin-bottom: 20px;
+}
+
+tbody tr th, thead tr th {
+    text-align: center;
 }
 
 

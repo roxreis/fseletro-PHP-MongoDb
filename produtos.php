@@ -21,7 +21,12 @@ $result = $con->query($select);
 </head>
 <body>
     
-    <?php include_once('template/header.php'); ?>
+    <?php 
+    
+    include_once('template/header.php');
+    include_once('listar-dados-banco.php');
+    
+    ?>
 
     <main class="containerRoot">
         <h1>Produtos</h1>
@@ -32,7 +37,7 @@ $result = $con->query($select);
                     <li onclick="exibirTodos()">Todos (12)</li>
                     <li onclick="exibirCategoria('Relogios')">Relogios (3)</li>
                     <li onclick="exibirCategoria('Tvs')">Tvs (3)</li>
-                    <li onclick="exibirCategoria('Smartphones')">Smartphones (3)</li>
+                    <li onclick="exibirCategoria('Smartphones')">Celulares (3)</li>
                     <li onclick="exibirCategoria('Notebooks')">Notebooks (3)</li>
                 </ul>
             </aside>

@@ -12,6 +12,9 @@
     <?php include_once('template/header.php'); ?>
 
     <main class="containerRoot">
+        <div class="alert alert-danger" role="alert">
+            Formulário em construção!
+        </div>
         <h1>Contato</h1>
         <section class="section-contato">
             <div class= "zap-contato">
