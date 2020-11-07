@@ -11,9 +11,9 @@
     
     <?php include_once('template/header.php'); ?>
 
-    <main class="containerRoot index">
+    <main class="container index">
         <section class="section-home">
-        <div class="banner-home">
+        <div class=" container banner-home">
 
                 <img src="img/banner.jpg" alt="">
                 <div class=" ">

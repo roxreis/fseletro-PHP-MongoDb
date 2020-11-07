@@ -21,5 +21,19 @@ let exibirTodos = () => {
 };
 
 
+function semMouse(imagem) {
+    
+        imagem.width = 250;
+        imagem.height = 165;
+    };
+  
+function comMouse(imagem) {
+    imagem.width = 300;
+    imagem.height = 215;
+
+
+};
+
+
 
 

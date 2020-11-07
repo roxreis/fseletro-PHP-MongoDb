@@ -16,6 +16,7 @@ $result = $con->query($select);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Produtos</title>
 </head>
@@ -28,11 +29,12 @@ $result = $con->query($select);
     
     ?>
 
-    <main class="containerRoot">
+    <main class="container">
         <h1>Produtos</h1>
             <section class="section-produtos">  
             <aside>
                 <h3>CATEGORIAS</h3>
+                <hr class="w-75">
                 <ul>
                     <li onclick="exibirTodos()">Todos (12)</li>
                     <li onclick="exibirCategoria('Relogios')">Relogios (3)</li>
@@ -45,7 +47,7 @@ $result = $con->query($select);
                 <?php if($result->num_rows > 0): ?> 
                     <?php while($produto = $result->fetch_assoc()): ?>
                         <div class="boxProdutos" id="<?= $produto['categoria'];?>"> 
-                            <img src="<?=$produto['imagem'] ; ?>" alt="relogio"  >
+                            <img src="<?=$produto['imagem'] ; ?>" alt="relogio" onmouseout="semMouse(this)" onmouseover="comMouse(this)" >
                             <p><strong><?=$produto['descricao'] ;?></strong></p>
                             <hr>
                             <p>Preço inicial: <strike>R$ <?=$produto['preco'];?></strike></p>
