@@ -1,4 +1,4 @@
-Projeto Full Stack Eletro - Recode Pro
+<h1>Projeto Full Stack Eletro - Recode Pro</h1>
 
 Loja online de produtos eletro-eletronicos
 
