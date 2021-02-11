@@ -8,9 +8,9 @@ Loja online de produtos eletro-eletronicos
 #Instalação do projeto
  Para execução é necessário a instalação:
 
- Xampp - https://www.apachefriends.org/pt_br/download.html
- Composer - https://getcomposer.org/download/
- MongoDb - https://www.mongodb.com/try/download/community 
+ Xampp - https://www.apachefriends.org/pt_br/download.html<br>
+ Composer - https://getcomposer.org/download/<br>
+ MongoDb - https://www.mongodb.com/try/download/community <br>
 
  Dentro da pasta do projeto, rodar comando: 'composer require jenssegers/mongodb --ignore-platform-reqs'
 
@@ -21,10 +21,10 @@ Loja online de produtos eletro-eletronicos
  Nome do banco = fseletro<br>
  Colections .json com os dados do banco na pasta bancoDados.
 
-#Funcionalidades
- Página inicial
- Contato
- Lojas
- Cadastro de pedido
- Produtos com listagem de itens vindos do banco de dados
+#Funcionalidades<br>
+ Página inicial<br>
+ Contato<br>
+ Lojas<br>
+ Cadastro de pedido<br>
+ Produtos com listagem de itens vindos do banco de dados<br>
 
