@@ -6,7 +6,7 @@ Loja online de produtos eletro-eletronicos
  HTML, CSS, JavaScript, MONGODB, PHP e Boostrap.
 
 #Instalação do projeto<br>
- <b>Para execução é necessário a instalação:<b>
+ <b style="color:red;">Para execução é necessário a instalação:<b>
 
  Xampp - https://www.apachefriends.org/pt_br/download.html<br>
  Composer - https://getcomposer.org/download/<br>
