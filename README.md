@@ -2,11 +2,11 @@
 
 Loja online de produtos eletro-eletronicos
 
-#Tecnologias usadas no do projeto
+#Tecnologias usadas no do projeto<br>
  HTML, CSS, JavaScript, MONGODB, PHP e Boostrap.
 
-#Instalação do projeto
- Para execução é necessário a instalação:
+#Instalação do projeto<br>
+ <b>Para execução é necessário a instalação:<b>
 
  Xampp - https://www.apachefriends.org/pt_br/download.html<br>
  Composer - https://getcomposer.org/download/<br>
