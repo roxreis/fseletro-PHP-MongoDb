@@ -18,7 +18,7 @@ Loja online de produtos eletro-eletronicos
 
 
 #Banco de dados
- Nome do banco = fseletro
+ Nome do banco = fseletro<br>
  Colections .json com os dados do banco na pasta bancoDados.
 
 #Funcionalidades
