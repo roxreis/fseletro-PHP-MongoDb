@@ -2,18 +2,26 @@ Projeto Full Stack Eletro - Recode Pro
 
 Loja online de produtos eletro-eletronicos
 
-Tecnologias usadas no do projeto
-HTML, CSS, JavaScript, MySQL, PHP e Boostrap.
+#Tecnologias usadas no do projeto
+ HTML, CSS, JavaScript, MONGODB, PHP e Boostrap.
 
-Código fonte
-git clone https://github.com/roxreis/fullstackeletro
+#Instalação do projeto
+ Para execução é necessário a instalação:
 
-Instalação do projeto
-Para execução basta um servidor local, testado no WAMP e XAMP.
+ Xampp - https://www.apachefriends.org/pt_br/download.html
+ Composer - https://getcomposer.org/download/
+ MongoDb - https://www.mongodb.com/try/download/community 
 
-Arquivo .sql com os dados do banco na pasta bancoDados.
+ Dentro da pasta do projeto, rodar comando: 'composer require jenssegers/mongodb --ignore-platform-reqs'
 
-Funcionalidades
+ Se necessário, colocar um arquivo .dll(https://pecl.php.net/package/mongodb/1.8.2/windows) na pasta C:\xampp\php\ext
+
+
+#Banco de dados
+ Nome do banco = fseletro
+ Colections .json com os dados do banco na pasta bancoDados.
+
+#Funcionalidades
  Página inicial
  Contato
  Lojas

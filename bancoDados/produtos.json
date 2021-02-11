@@ -1,0 +1,109 @@
+[{
+  "_id": {
+    "$oid": "60246ec20eeed8e9148d86f6"
+  },
+  "categoria": "Relogios",
+  "descricao": "Relogio Samsung Rosa",
+  "imagem": "img/relogio1.JPG",
+  "preco": 2000,
+  "preco_c_desconto": 1500
+},{
+  "_id": {
+    "$oid": "60247157eac45821accfdafc"
+  },
+  "categoria": "Relogios",
+  "descricao": "Relogio Smart Band Preto",
+  "imagem": "img/relogio2.JPG",
+  "preco": 3500,
+  "preco_c_desconto": 3000
+},{
+  "_id": {
+    "$oid": "60247177eac45821accfdafd"
+  },
+  "categoria": "Relogios",
+  "descricao": "Relogio Smart Band Branco",
+  "imagem": "img/relogio3.JPG",
+  "preco": 3500,
+  "preco_c_desconto": 3000
+},{
+  "_id": {
+    "$oid": "6024719deac45821accfdafe"
+  },
+  "categoria": "Tvs",
+  "descricao": "TV TCL",
+  "imagem": "img/tv1.JPG",
+  "preco": 6000,
+  "preco_c_desconto": 5000
+},{
+  "_id": {
+    "$oid": "602471caeac45821accfdaff"
+  },
+  "categoria": "Tvs",
+  "descricao": "TV Samsung",
+  "imagem": "img/tv2.JPG",
+  "preco": 7000,
+  "preco_c_desconto": 6500
+},{
+  "_id": {
+    "$oid": "602471e0eac45821accfdb00"
+  },
+  "categoria": "Tvs",
+  "descricao": "TV LG",
+  "imagem": "img/tv3.JPG",
+  "preco": 6000,
+  "preco_c_desconto": 5000
+},{
+  "_id": {
+    "$oid": "6024720deac45821accfdb01"
+  },
+  "categoria": "Smartphones",
+  "descricao": "Smartphone Samsung Rosa",
+  "imagem": "img/celular1.JPG",
+  "preco": 4000,
+  "preco_c_desconto": 3500
+},{
+  "_id": {
+    "$oid": "6024721eeac45821accfdb02"
+  },
+  "categoria": "Smartphones",
+  "descricao": "Smartphone Samsung Azul",
+  "imagem": "img/celular2.JPG",
+  "preco": 4000,
+  "preco_c_desconto": 3500
+},{
+  "_id": {
+    "$oid": "6024722eeac45821accfdb03"
+  },
+  "categoria": "Smartphones",
+  "descricao": "Smartphone Samsung Grafite",
+  "imagem": "img/celular3.JPG",
+  "preco": 4500,
+  "preco_c_desconto": 3500
+},{
+  "_id": {
+    "$oid": "6024725aeac45821accfdb04"
+  },
+  "categoria": "Notebooks",
+  "descricao": "Notebook Asus",
+  "imagem": "img/note1.JPG",
+  "preco": 8000,
+  "preco_c_desconto": 7800
+},{
+  "_id": {
+    "$oid": "60247266eac45821accfdb05"
+  },
+  "categoria": "Notebooks",
+  "descricao": "Notebook Asus",
+  "imagem": "img/note2.JPG",
+  "preco": 8000,
+  "preco_c_desconto": 7800
+},{
+  "_id": {
+    "$oid": "60247283eac45821accfdb06"
+  },
+  "categoria": "Notebooks",
+  "descricao": "Notebook Samsung",
+  "imagem": "img/note3.JPG",
+  "preco": 6000,
+  "preco_c_desconto": 5800
+}]

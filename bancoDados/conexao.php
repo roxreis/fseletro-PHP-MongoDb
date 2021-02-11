@@ -1,18 +1,15 @@
-<?php 
+<?php
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "fteletro";
 
-$con = mysqli_connect($host, $user, $pass, $dbname);
+    require_once __DIR__ . "/../vendor/autoload.php";
 
-if ($con) {
-        
-    return true;
+    $client = new MongoDB\Client("mongodb://localhost:27017");
 
-} else {
+    $collectionProduct = $client->fseletro->produtos;
+    $collectionOrder = $client->fseletro->pedidos;
 
-    die ("falha" .mysqli_errno($con));
-}
+
+
+
+
 

@@ -1,16 +1,3 @@
-<?php 
-
-include_once('bancoDados/conexao.php');
-
-
-$select = 'SELECT * FROM produtos';
-$result = $con->query($select);
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,10 +11,13 @@ $result = $con->query($select);
     
     <?php 
     
-    include_once('template/header.php');
-    include_once('listar-dados-banco.php');
-    
+        include_once('template/header.php');
+        
+        include_once('bancoDados/conexao.php');
+
+     
     ?>
+    
 
     <main class="container">
         <h1>Produtos</h1>
@@ -44,19 +34,23 @@ $result = $con->query($select);
                 </ul>
             </aside>
             <section class=produtos-img>
-                <?php if($result->num_rows > 0): ?> 
-                    <?php while($produto = $result->fetch_assoc()): ?>
-                        <div class="boxProdutos" id="<?= $produto['categoria'];?>"> 
-                            <img src="<?=$produto['imagem'] ; ?>" alt="relogio" onmouseout="semMouse(this)" onmouseover="comMouse(this)" >
-                            <p><strong><?=$produto['descricao'] ;?></strong></p>
+                <?php 
+                $produtos = $collectionProduct->find([]);
+                if($produtos != []): ?> 
+                    <?php foreach($produtos as $produto): ?>
+                        <div class="boxProdutos" id="<?= $produto->categoria;?>"> 
+                            <img src="<?=$produto->imagem ; ?>" alt="relogio" onmouseout="semMouse(this)" onmouseover="comMouse(this)" >
+                            <p><strong><?=$produto->descricao ;?></strong></p>
                             <hr>
-                            <p>Preço inicial: <strike>R$ <?=$produto['preco'];?></strike></p>
-                            <p>Preço com desconto: <strong>R$ <?=$produto['precoFinal'];?></strong></p>
+                            <p>Preço inicial: <strike>R$ <?=$produto->preco;?></strike></p>
+                            <p>Preço com desconto: <strong>R$ <?=$produto->preco_c_desconto;?></strong></p>
                         </div>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <h2>Não há produtos cadastrados</h2>
                 <?php endif; ?>
+
+         
 
 <!-- 
 onclick="destaque(this)"  class="imgProdutos" onmouseover="mouseOver()" onmouseout="mouseOut()"

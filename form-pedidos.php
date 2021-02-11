@@ -13,13 +13,14 @@
     <?php 
     
     include_once('template/header.php'); 
-    include_once('listar-dados-banco.php');
+
+    include_once('bancoDados/conexao.php');
     
     ?>
 <main class="container ">
     <section class=" container d-flex justify-content-between">
         <div class="form-group div-form-pedidos">
-            <form class="form-pedidos " action="cadastro-pedido.php" method="POST">
+            <form class="form-pedidos " action="model/cadastraPedido.php" method="POST">
             <h2>Cadastre os Pedidos</h2>
                 <div class="form-group">
                     <label>Nome do Cliente</label>
@@ -41,11 +42,13 @@
                     <label>Nome do Produto</label>
                     <select name="produtoCliente" id="inputState" class="form-control">
                         <option  selected>Escolha uma opção</option>
-                    <?php if($result1->num_rows > 0): ?> 
-                        <?php while($produto = $result1->fetch_assoc()): ?>
-                            <option value="<?=$produto['descricao'];?>" ><?=$produto['descricao'];?></option>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
+                        <?php 
+                            $produtos = $collectionProduct->find([]);
+                            if($produtos != []): ?> 
+                                <?php foreach($produtos as $produto): ?>
+                                    <option value="<?=$produto->descricao;?>" ><?=$produto->descricao;?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                     </select>
                 </div> 
 
@@ -82,27 +85,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php if($result2->num_rows > 0): ?> 
-                    <?php while ($pedido = $result2->fetch_assoc()): ?>
-                        <?php 
-                            //ao imprimir na tela, troca o ponto dos valores por virgula
-                            $unitSemVirgula = $pedido['valor_unitario']; 
-                            $unitComVirgula = str_replace(".", ",",$unitSemVirgula);
-                            $totSemVirgula = $pedido['valor_total'];
-                            $totComVirgula = str_replace(".", ",",$totSemVirgula);
-                        ?>
+                <?php 
+                     $pedidos = $collectionOrder->find([]);
+                        if($pedidos != []):  
+                            foreach($pedidos as $pedido): ?>
                         <tr> 
-                            <th scope="row"><?= $pedido['id']; ?></th>
-                            <td><?= $pedido['nome_cliente']; ?></td>
-                            <td><?= $pedido['endereco']; ?></td>
-                            <td><?= $pedido['ddd']; ?></td>
-                            <td><?= $pedido['telefone']; ?></td>
-                            <td><?= $pedido['nome_produto']; ?></td>
-                            <td>R$ <?= $unitComVirgula; ?> </td>
-                            <td><?= $pedido['quantidade']; ?></td>
-                            <td>R$ <?= $totComVirgula; ?></td>
+                            <th scope="row"><?= $pedido->_id; ?></th>
+                            <td><?= $pedido->nome; ?></td>
+                            <td><?= $pedido->endereco; ?></td>
+                            <td><?= $pedido->ddd; ?></td>
+                            <td><?= $pedido->tel; ?></td>
+                            <td><?= $pedido->produto; ?></td>
+                            <td>R$ <?= $pedido->valorUnitario; ?> </td>
+                            <td><?= $pedido->quantidade; ?></td>
+                            <td>R$ <?= $pedido->valorTotal; ?></td>
                         </tr>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <script> alert('Não há pedidos cadastrados!')</script>
                 <?php endif; ?>   

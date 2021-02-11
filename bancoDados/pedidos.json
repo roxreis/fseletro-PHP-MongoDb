@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6024746f9f6a00008e005e79"
+  },
+  "nome": "Rodrigo Reis",
+  "endereco": "Rua Aburá",
+  "ddd": "11",
+  "tel": "119811987",
+  "produto": "Relogio Samsung Rosa",
+  "valorUnitario": "2000",
+  "quantidade": "2",
+  "valorTotal": 4000
+},{
+  "_id": {
+    "$oid": "602474ae9f6a00008e005e7a"
+  },
+  "nome": "Rodrigo Reis",
+  "endereco": "Rua Aburá",
+  "ddd": "11",
+  "tel": "119811987",
+  "produto": "TV Samsung",
+  "valorUnitario": "5000",
+  "quantidade": "2",
+  "valorTotal": 10000
+}]
